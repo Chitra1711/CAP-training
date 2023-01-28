@@ -1,0 +1,16 @@
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        ArrayList<Integer> order = new ArrayList<Integer>();
+        preorder(root,order);
+        return order;
+
+        
+    }
+    void preorder(TreeNode t, ArrayList<Integer> order){
+        if(t==null)
+            return;
+        order.add(t.val);
+        preorder(t.left,order);
+        preorder(t.right,order);
+    }
+}
